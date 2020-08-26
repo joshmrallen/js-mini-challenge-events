@@ -26,7 +26,10 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+const header = document.querySelector("h1#header");
+header.addEventListener("click", function(e){
+  toggleColor(e.target);
+});
 ```
 
 ## Deliverable 2: Create Player
@@ -43,6 +46,22 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
+const form = document.querySelector('#new-player-form');
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+    let player = {
+        number: e.target.number.value,
+        name: e.target.name.value,
+        nickname: e.target.nickname.value,
+        photo: e.target.photo.value,
+        likes: 1000
+    };
+
+    renderPlayer(player);
+    e.target.reset();
+    
+    });
 
 ```
 
@@ -54,5 +73,11 @@ You can decide if you'd like to use *event delegation* to handle this, or if you
 
 **YOUR NOTES**
 ```
+I don't see how event delegation would work here since there's a specific button to push, not the entire player div.
 
+I also don't see how you'd access the player like total if you did event delegation.
+
+playerContainer.addEventListener("click",, function(e){
+    e.target.
+});
 ```
